@@ -2,7 +2,9 @@
 
 ## Instructions
 
-1. Clone Project.
+```
+Clone Project.
+```
 
 Update ChromeDrive compatible with your System from https://chromedriver.chromium.org/downloads
 
