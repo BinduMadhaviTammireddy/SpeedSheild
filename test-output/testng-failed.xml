@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.SpeedSheild.testCases.TC_FilterByName">
+      <class name="com.SpeedSheild.testCases.TC_Login_001">
         <methods>
           <include name="setup"/>
           <include name="end"/>
-          <include name="filterbynames"/>
+          <include name="loginTestCase"/>
         </methods>
-      </class> <!-- com.SpeedSheild.testCases.TC_FilterByName -->
+      </class> <!-- com.SpeedSheild.testCases.TC_Login_001 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

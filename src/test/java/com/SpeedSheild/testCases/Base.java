@@ -7,19 +7,28 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
+import com.SpeedSheild.utilities.ReadConfig;
+
 public class Base {
 	
-	public String Home_Url="https://staging.fleetonline.net";
+	/*public String Home_Url="https://staging.fleetonline.net";
 	public String username="test_141@sst.com";
 	public String password="Pass123!";
+	*/
 	
+
+
 	public static WebDriver driver;
 	public static Logger logger;
+	public static ReadConfig readconfig= new ReadConfig();
 	
+	public String Home_Url = readconfig.getURL();
+	public String username = readconfig.getUsername_1();
+	public String password = readconfig.getPassword_1();	
 	@BeforeClass(alwaysRun=true)
 	public void setup()
 	{
-		System.setProperty("webdriver.chrome.driver", "/Users/bindumadhavitammireddy/sel_testing/SpeedSheild/SpeedSheild/Drivers/chromedriver");
+		System.setProperty("webdriver.chrome.driver", readconfig.getChromePath());
 		driver= new ChromeDriver();	
 		
 		logger= Logger.getLogger("speedSheild");

@@ -52,7 +52,11 @@ public class AdministrationPage {
 	{
 		filterdOperator.click();
 	}
-	
+	public void clearPersonalNumber()
+	{
+		phoneNumber.click();
+		phoneNumber.clear();
+	}
 	
 	public void  enternumber(String number)
 	{
