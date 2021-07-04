@@ -1,4 +1,5 @@
 package com.SpeedSheild.testCases;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -13,21 +14,23 @@ public class TC_Login_001 extends Base
 			
 			Login login =new Login(driver);
 			login.clickOK();
+			logger.info("Acepted cookies");
 			login.fillUserName(username);
 			login.fillPassword(password);
 			login.clickSignIN();
+			logger.info("Click signin");
 			screenwait();
 			
 			
 			  if(driver.getPageSource().contains("Operator Management"))
 			  {
-				  System.out.print("in true");
+				  logger.info("signin test pass");
 				  Assert.assertTrue(true);
 			  }
 			  else
 			  {
 				
-				  System.out.print("in false");
+				  logger.info("signin test fail");
 
 				  Assert.assertTrue(false);
 			  }

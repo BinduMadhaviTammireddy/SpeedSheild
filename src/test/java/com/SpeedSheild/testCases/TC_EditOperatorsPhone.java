@@ -23,13 +23,13 @@ public class TC_EditOperatorsPhone extends Base
 		
 		  if(driver.getPageSource().contains("Operator Details updated successfully."))
 		  {
-			  System.out.print("in true");
+			  logger.info("Operators Personal number edit : test pass");
 			  Assert.assertTrue(true);
 		  }
 		  else
 		  {
 			
-			  System.out.print("in false");
+			  logger.info("Operators Personal number edit : test fail");
 
 			  Assert.assertTrue(false);
 		  }

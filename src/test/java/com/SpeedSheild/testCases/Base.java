@@ -1,5 +1,7 @@
 package com.SpeedSheild.testCases;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
@@ -12,12 +14,16 @@ public class Base {
 	public String password="Pass123!";
 	
 	public static WebDriver driver;
+	public static Logger logger;
+	
 	@BeforeClass(alwaysRun=true)
 	public void setup()
 	{
 		System.setProperty("webdriver.chrome.driver", "/Users/bindumadhavitammireddy/sel_testing/SpeedSheild/SpeedSheild/Drivers/chromedriver");
-
 		driver= new ChromeDriver();	
+		
+		logger= Logger.getLogger("speedSheild");
+		PropertyConfigurator.configure("log4j.properties");
 	}
 	
 	public void screenwait()

@@ -20,7 +20,7 @@ public class TC_FilterByName  extends Base
 		admin_page.filterByFirstName("Operator");
 		admin_page.filterByLastName("Card1236");
 		screenwait();
-		
+		  logger.info("Operators filtered");
 		admin_page.output("Operator");
 	
 	
