@@ -11,7 +11,7 @@ Update ChromeDrive compatible with your System from https://chromedriver.chromiu
 Update the config.properties in Configurations following details
 
 ```
-__Home_Url__ - URL of the website
+__This will also be bold__.   - URL of the website
 **ChromePath**  - Path to Chrome Driver
 **User_name_1** - username to login
 **Password_1** - Password to login
