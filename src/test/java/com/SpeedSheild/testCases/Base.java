@@ -9,14 +9,8 @@ import org.testng.annotations.BeforeClass;
 
 import com.SpeedSheild.utilities.ReadConfig;
 
-public class Base {
-	
-	/*public String Home_Url="https://staging.fleetonline.net";
-	public String username="test_141@sst.com";
-	public String password="Pass123!";
-	*/
-	
-
+public class Base 
+{
 
 	public static WebDriver driver;
 	public static Logger logger;
