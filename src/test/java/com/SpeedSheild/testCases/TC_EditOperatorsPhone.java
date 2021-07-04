@@ -8,8 +8,8 @@ import com.SpeedSheild.pageObject.AdministrationPage;
 public class TC_EditOperatorsPhone extends Base
 
 {
-	public String Personal_number_1 = readconfig.Personal_number_1();
-	public String Personal_number_2 = readconfig.Personal_number_2();
+	public String Personal_number = readconfig.Personal_number();
+
 	@Test
 
 	
@@ -22,7 +22,7 @@ public class TC_EditOperatorsPhone extends Base
 	AdministrationPage admin_page = new AdministrationPage(driver);
 	admin_page.OperatorDetails();
 	admin_page.clearPersonalNumber();
-	admin_page.enternumber(Personal_number_2);
+	admin_page.enternumber(Personal_number);
 	admin_page.updateDetails();
 	admin_page.confirmUpdate();
 	screenwait();

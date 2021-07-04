@@ -1,5 +1,7 @@
 package com.SpeedSheild.testCases;
 
+import java.util.List;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.SpeedSheild.pageObject.AdministrationPage;
@@ -23,8 +25,29 @@ public class TC_FilterByName  extends Base
 		admin_page.filterByLastName(Last_name);
 		screenwait();
 		  logger.info("Operators filtered");
-		admin_page.output(First_name);
-	
-	
+		  
+		   List<String> filteredData =   admin_page.output();
+		   
+		   for (int i=0; i< filteredData.size();i++)
+			{
+			   String value= filteredData.get(i);
+				if (value.contains(First_name) && value.contains(Last_name)) 
+				
+				{
+					  logger.info("Filter based on first name: test pass");
+					  Assert.assertTrue(true);
+				  }
+				  else
+				  {
+					
+					  logger.info("Filter based on first name: test fail");
+
+					  Assert.assertTrue(false);
+				  }
+				   
+			}
+				
+
+
 		}
 }

@@ -1,10 +1,12 @@
 package com.SpeedSheild.pageObject;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 
 public class AdministrationPage {
@@ -23,9 +25,10 @@ public class AdministrationPage {
 	@FindBy(id="tbSearch0_2")
 	WebElement FilterBy_LastName;
 	
+	@FindBys( {@FindBy(xpath="//*[@id=\"tblDataTable0\"]"), @FindBy(tagName="tr")}) 
+	List<WebElement> rows_table;
+
 	
-	 @FindBy(xpath = "//*[@id=\"tblDataTable0_wrapper\"]/div[4]/div[1]/div/table/thead/tr/th[1]") List<WebElement> col;
-	 @FindBy(tagName = "tr") List<WebElement> row;
 	 @FindBy(xpath="//*[@id=\"tblDataTable0\"]/tbody/tr/td[1]")
 	 WebElement filterdOperator;
 	 
@@ -37,6 +40,8 @@ public class AdministrationPage {
 	 
 	 @FindBy(id="btnUpdateYes")
 	 WebElement confirmUpdate;
+
+
 	 
 	public void  filterByFirstName(String firstname)
 	{
@@ -72,20 +77,20 @@ public class AdministrationPage {
 	{
 		confirmUpdate.click();
 	}
-	public void output(String firstname)
+	
+	public List<String> output()
 	{
 		
-		System.out.println("Filtered entries count is"+ col.size());
-		/*for (int i=0; i<col.size();i++)
-		{
-			boolean result;
-			String value= col.get(i).getText();
-			if (value.contains(firstname)) 
-			{result= true;}
-			else
-			{result = false ;}
+		System.out.println("Filtered entries count is"+ rows_table.size());
+		List<String> filteredData = new ArrayList<String>();		
+		for (int i=2; i< rows_table.size();i++)
+		{	
+			filteredData.add(rows_table.get(i).getText());
+			
 		}
-		*/
+		return filteredData;
+		
 
 	}
+	
 }

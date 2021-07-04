@@ -56,16 +56,12 @@ public class ReadConfig
 		String Last_name= properties.getProperty("Last_name");
 		return Last_name;
 	}
-	public String Personal_number_1()
+	public String Personal_number()
 	{
-		String Personal_number_1= properties.getProperty("Personal_number_1");
-		return Personal_number_1;
+		String Personal_number= properties.getProperty("Personal_number");
+		return Personal_number;
 	}
-	public String Personal_number_2()
-	{
-		String Personal_number_2= properties.getProperty("Personal_number_2");
-		return Personal_number_2;
-	}
+	
 	
 }
 
